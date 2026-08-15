@@ -1,0 +1,15 @@
+{
+  "name": "black-oasis-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Black Oasis Studio — sitio web con asistente de cotización por IA",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.3.6"
+  }
+}
