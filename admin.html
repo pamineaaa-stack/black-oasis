@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<title>Panel — Black Oasis Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="admin-wrap">
+
+  <!-- ============ LOGIN GATE ============ -->
+  <div class="admin-login" id="loginView">
+    <img class="admin-logo" src="/logo/logo-icon.png" alt="Black Oasis Studio">
+    <p class="eyebrow">Black Oasis Studio</p>
+    <h1>Panel de control</h1>
+    <p class="hint">Acceso solo para Black Oasis Studio.</p>
+    <form id="loginForm">
+      <input type="password" id="inpPassword" placeholder="Contraseña" autocomplete="current-password">
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+    <p class="error" id="loginError">Contraseña incorrecta.</p>
+  </div>
+
+  <!-- ============ PANEL ============ -->
+  <div class="admin-panel" id="panelView" style="display:none;">
+    <header class="admin-header">
+      <a href="/" class="admin-brand">
+        <img src="/logo/logo-icon.png" alt="Black Oasis Studio">
+        <span class="brand-text">
+          <span class="eyebrow">Black Oasis Studio</span>
+          <span class="title">Panel de control</span>
+        </span>
+      </a>
+      <button class="btn btn-ghost" id="btnLogout">Cerrar sesión</button>
+    </header>
+
+    <section class="admin-section">
+      <h2>Añadir sitio al portafolio</h2>
+      <p class="hint">Esto se guarda en este navegador para que puedas previsualizarlo. Para que se vea en el sitio real para todos, usa "Copiar código para publicar" más abajo y sigue las instrucciones.</p>
+      <form id="addForm" class="admin-form">
+        <div class="field">
+          <label for="fName">Nombre del negocio</label>
+          <input type="text" id="fName" placeholder="Ej. Sunset Coffee Co." required>
+        </div>
+        <div class="field">
+          <label for="fCategory">Categoría / ubicación</label>
+          <input type="text" id="fCategory" placeholder="Ej. Cafetería — Austin, TX">
+        </div>
+        <div class="field">
+          <label for="fUrl">Link del sitio</label>
+          <input type="url" id="fUrl" placeholder="https://..." required>
+        </div>
+        <div class="field">
+          <label for="fImage">Captura / imagen</label>
+          <input type="file" id="fImage" accept="image/*">
+          <div class="thumb-preview" id="thumbPreview"></div>
+        </div>
+        <button type="submit" class="btn">Añadir a la lista</button>
+      </form>
+    </section>
+
+    <section class="admin-section">
+      <h2>Sitios en el portafolio</h2>
+      <div class="admin-list" id="itemList"></div>
+    </section>
+
+    <section class="admin-section publish-section">
+      <h2>Publicar los cambios</h2>
+      <p class="hint">
+        Este sitio es estático (sin base de datos), así que lo que añades aquí solo se
+        guarda en este navegador para que lo revises. Para que tus visitantes lo vean,
+        copia el código y pégalo en <code>src/work-store.js</code>, reemplazando
+        <code>DEFAULT_WORK_ITEMS</code> — luego vuelve a compilar y subir el sitio.
+      </p>
+      <button class="btn" id="btnCopyCode">Copiar código para publicar</button>
+      <span class="copy-confirm" id="copyConfirm">¡Copiado!</span>
+    </section>
+  </div>
+
+</div>
+
+<script type="module" src="/src/admin.js"></script>
+</body>
+</html>
